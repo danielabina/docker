@@ -1,0 +1,31 @@
+version: '3'
+services:
+
+   app-front:
+    restart: always
+    build: ./front
+    container_name: angular-docker 
+    ports:
+    -4201: 4200
+    depends_on:
+    - app-back
+
+   app-back:
+    restart: always
+    build: ./back
+    container_name: spring-docker
+    ports:
+    -8081: 8086
+    depends_on:
+    - mysql-docker
+
+   mysql-docker:
+    restart: always
+    image: mysql:5.6
+    ##imagem que será baixada do hub.docker
+    container_name: mysql-docker
+    ## nome que atribui ao contêiner
+    environment: 
+     - MYSQL_ROOT_PASSWORD=root
+     - MYSQL_DATABASE=candidato
+     - MYSQL_PASSWORD=root
