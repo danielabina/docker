@@ -29,3 +29,6 @@ services:
      - MYSQL_ROOT_PASSWORD=root
      - MYSQL_DATABASE=candidato
      - MYSQL_PASSWORD=root
+
+URL FRONT DOCKER : https://hub.docker.com/r/bina20/angular-docker/
+URL BACK DOCKER : https://hub.docker.com/r/bina20/spring-docker/
